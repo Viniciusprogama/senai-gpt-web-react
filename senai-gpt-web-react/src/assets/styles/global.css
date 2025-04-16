@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');    
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.inpt {
+
+
+    padding: 18px; /* espacamento int*/
+    border: none; /*remove a borda*/
+    background-color: #f7f9fb; /*define do fundo*/
+    border-radius: 10px;
+    width: 377px;
+    margin-bottom: 16px ;
+
+}
+
+.btn{
+
+    background-color: #1c1c1c;
+    color: #f7f9fb;
+    border: none; /*altura*/
+    padding: 18px;
+    width: 377px;/*largura*/
+    border-radius: 10px;/*arredonda a borda*/
+}
