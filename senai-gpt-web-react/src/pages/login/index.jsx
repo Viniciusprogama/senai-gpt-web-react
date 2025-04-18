@@ -4,12 +4,12 @@ import { useState } from "react";
 
 function Login() {
 
-  const[email, setEmail] = useState("");
-  const[password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const onloginclick = async ()  =>{
+  const onloginclick = async () => {
 
-    let response = await fetch ("https://senai-gpt-api.azurewebsites.net/login",{
+    let response = await fetch("https://senai-gpt-api.azurewebsites.net/login", {
       headers: {
         "content-Type": "application/json"
       },
@@ -23,7 +23,36 @@ function Login() {
 
     console.log(response);
 
+    if (response.ok == true) {
+      alert("login realizado com sucesso");
+
+
+      let json = await response.json();
+
+      let token = json.accessToken;
+
+      console.log("Token;" + token);
+
+      localStorage.setItem("meuToken", token);
+
+      window.location.href = "/chat"; 
+
+    } else {
+
+      if (response.status == 401) {
+
+        alert("crendenciais incorretas. tente novamente");
+
+      } else {
+
+        alert("erro inesperado aconteceu, caso persista, caso persista contate os administradores")
+      }
+
+    }
+
   }
+
+
 
   return (
     <>
@@ -54,3 +83,6 @@ function Login() {
 
 
 export default Login
+
+
+/*API rest get = listar/ post = enviar informacao/put = atualizar um valo/delete = deletar uma informacai */ 
