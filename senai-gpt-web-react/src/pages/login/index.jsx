@@ -35,7 +35,7 @@ function Login() {
 
       localStorage.setItem("meuToken", token);
 
-      window.location.href = "/chat"; 
+      window.location.href = "/chat";
 
     } else {
 
@@ -45,7 +45,7 @@ function Login() {
 
       } else {
 
-        alert("erro inesperado aconteceu, caso persista, caso persista contate os administradores")
+        alert("erro inesperado aconteceu, caso persista contate os administradores")
       }
 
     }

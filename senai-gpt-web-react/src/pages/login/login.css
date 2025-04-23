@@ -1,79 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');    
-*{
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 
-  
-    /* .titulo{
+
+/* .titulo{
         font-size: 76px;
 
 
     } */
 
-     /* #meutiutlo {
+/* #meutiutlo {
 
 
     font-size: 76px;
 
     }  */
 
-    .paige-contener{
+.paige-contener {
 
-        display: flex;
-    }
+    display: flex;
+}
 
- h1 {
+h1 {
 
     font-size: 76px;
-    font-family:"Inter";
+    font-family: "Inter";
     font-weight: normal;
     margin-bottom: 16px;
 
-    }
+}
 
-    .inpt {
+.inpt {
 
 
-        padding: 18px; /* espacamento int*/
-        border: none; /*remove a borda*/
-        background-color: #f7f9fb; /*define do fundo*/
-        border-radius: 10px;
-        width: 377px;
-        margin-bottom: 16px ;
+    padding: 18px;
+    /* espacamento int*/
+    border: none;
+    /*remove a borda*/
+    background-color: #f7f9fb;
+    /*define do fundo*/
+    border-radius: 10px;
+    width: 377px;
+    margin-bottom: 16px;
 
-    }
+}
 
-    .btn{
+.login-btn {
 
-        background-color: #1c1c1c;
-        color: #f7f9fb;
-        border: none; /*altura*/
-        padding: 18px;
-        width: 377px;/*largura*/
-        border-radius: 10px;/*arredonda a borda*/
-    }
-        
-    .logincontener{
+    background-color: #1c1c1c;
+    color: #f7f9fb;
+    border: none;
+    /*altura*/
+    padding: 18px;
+    width: 377px;
+    /*largura*/
+    border-radius: 10px;
+    /*arredonda a borda*/
+}
 
-        height: 100vh;
-        display: flex;
-         flex-direction: column;/*deixa em colunas*/
-        align-items: center;/*horizontal*/
-        justify-content: center;/*horizontal*/
-        width: 50vw; /*largura*/
-    }
-        
-    .logo{
+.login-logincontener {
 
-        height: 60px;
-    }
-    .roboimage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /*deixa em colunas*/
+    align-items: center;
+    /*horizontal*/
+    justify-content: center;
+    /*horizontal*/
+    width: 50vw;
+    /*largura*/
+}
 
-        background-image: url(../../assets/imgs/Sidebar.png);
-        background-size: cover;
+.login-logo {
 
-        width: 50vw;
-        height: 100vh;
-    }   
+    height: 60px;
+}
+
+.roboimage {
+
+    background-image: url(../../assets/imgs/Sidebar.png);
+    background-size: cover;
+
+    width: 50vw;
+    height: 100vh;
+}
