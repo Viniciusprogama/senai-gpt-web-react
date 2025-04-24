@@ -1,7 +1,9 @@
 import "./chat.css"
-import meio  from "../../assets/imgs/Chat.png"
+import meio from "../../assets/imgs/Chat.png"
 import ChatText1 from "../../assets/imgs/ChatText.png"
 import icon from "../../assets/imgs/IconSet.png"
+import group from "../../assets/imgs/Group.png"
+import paper from "../../assets/imgs/PaperPlaneRight.png"
 import icon1 from "../../assets/imgs/IconSet (1).png"
 import icon2 from "../../assets/imgs/IconSet (2).png"
 import icon3 from "../../assets/imgs/IconSet (3).png"
@@ -9,17 +11,54 @@ import icon4 from "../../assets/imgs/IconSet (4).png"
 import user from "../../assets/imgs/User.png"
 import icon5 from "../../assets/imgs/IconSet (5).png"
 import icon6 from "../../assets/imgs/IconSet (6).png"
+import { use, useEffect, useState } from "react"
 
 
 function Chat() {
 
+    const [chats, setChats] = useState([]);
+
+    useEffect(() => {
+        getChats();
+    }, []);
+
+    const getChats = async () => {
+
+        let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats", {
+
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("meuToken")
+            }
+
+        });
+
+        console.log(response);
+
+        if (response.ok == true) {
+
+            let json = await response.json();
+
+            setChats(json);
+
+        } else {
+
+            if (response.status == 400)
+                window.location.href = "/login";
+        }
+    }
+
+
     return (
         <>
+
+            <main></main>
             <header>
+
+
 
                 <div className="meio">
 
-                    <img src= {meio} alt="" />
+                    <img src={meio} alt="" />
                 </div>
 
                 <div className="borda" />
@@ -27,24 +66,24 @@ function Chat() {
                 <div className="botao" >
 
 
-                    <button className="btn" />
-                    + New chat
+                    <button className="chatbtn" > + New chat</button>
+
                 </div>
 
                 <div className="painel-lateral">
 
-
-                    <button className="botao-chat">Ai Chat Tool Ethics</button>
-                    <button className="botao-chat">Ai Chat Tool Impact Writing</button>
-                    <button className="botao-chat">New Chat</button>
-
+                    {chats.map(chat => (
+                    <button className="botao-chat">Ai Chat Tool Ethics
+                    {chat.chatTitle}
+                    </button>
+                    ))}
 
 
                 </div>
 
 
 
-                <div className="painel-lateral-baixo">
+                <div className="painell-lateral-baixo">
 
                     <button className="botao-chat" >Clear conversations</button>
                     <button className="botao-chat">Light mode</button>
@@ -61,7 +100,6 @@ function Chat() {
             </header>
 
             <body>
-
 
                 <div className="exemplos">
                     <h1 className="titulos-um">Examples</h1>
@@ -97,8 +135,8 @@ function Chat() {
                 <div className="digitacao">
 
                     <input className="escreva" type="mensagem" placeholder="type mensagem" />
-                    <img className="foto-baixo-escreva" src="../assents/imgs/Group.png" alt="" />
-                    <img className="foto-baixo-escreva-direita" src="../assents/imgs/PaperPlaneRight.png" alt="" />
+                    <img className="foto-baixo-escreva" src={group} alt="" />
+                    <img className="foto-baixo-escreva-direita" src={paper} alt="" />
 
 
 
@@ -110,52 +148,57 @@ function Chat() {
 
                 <div className="imagem-meio">
 
-                    <img className="imagem-no-meio" src= {icon} alt="" />
+                    <img className="imagem-no-meio" src={icon} alt="" />
 
                 </div>
 
                 <div className="imagem-meio-dois">
 
-                    <img className="imagem-meio-segunda" src= {icon1} alt="" />
+                    <img className="imagem-meio-segunda" src={icon1} alt="" />
 
                 </div>
 
                 <div className="imagem-meio-tres">
 
-                    <img className="imagem-meio-terceira" src= {icon2} alt="" />
+                    <img className="imagem-meio-terceira" src={icon2} alt="" />
                 </div>
 
                 <div className="img-painel-lateral">
 
-                    <img className="img-tela1" src= {ChatText1}  alt="" />
-                    <img className="img-tela2" src= {ChatText1} alt="" />
-                    <img className="img-tela3" src= {ChatText1} alt="" />
+                    <img className="img-tela1" src={ChatText1} alt="" />
+                    <img className="img-tela2" src={ChatText1} alt="" />
+                    <img className="img-tela3" src={ChatText1} alt="" />
                 </div>
 
 
                 <div className="img-painel-lateral-baixo">
 
-                    <img className="img-tela-baixo1" src= {icon3} alt="" />
-                    <img className="img-tela-baixo2" src= {icon4} alt="" />
-                    <img className="img-tela-baixo3" src= {user} alt="" />
-                    <img className="img-tela-baixo4" src= {icon5} alt="" />
-                    <img className="img-tela-baixo5" src= {icon6} alt="" />
+                    <img className="img-tela-baixo1" src={icon3} alt="" />
+                    <img className="img-tela-baixo2" src={icon4} alt="" />
+                    <img className="img-tela-baixo3" src={user} alt="" />
+                    <img className="img-tela-baixo4" src={icon5} alt="" />
+                    <img className="img-tela-baixo5" src={icon6} alt="" />
                 </div>
-                <main>
+
+            </body>
 
 
 
 
 
 
-                </main>
-                </body>
-
-            </>
 
 
-            )
 
-   }
 
-    export default Chat; 
+
+
+
+        </>
+
+
+    )
+
+}
+
+export default Chat; 
