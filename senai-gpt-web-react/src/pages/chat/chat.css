@@ -62,7 +62,7 @@
 
 
 
-    margin-top: 613px;
+    margin-top: 700px;
     padding: -10px;
     display: flex;
     font-size: 10px;
@@ -83,12 +83,12 @@
 .botao-chat {
 
 
-    width: 170px;
+    width: 130px;
     text-align: left;
     background-color: white;
     border: none;
     position: relative;
-    top: -40px;
+    top: -0px;
     margin-bottom: 10px;
 
 }
@@ -98,10 +98,10 @@
 
 .meio {
 
-    margin-left: 730px;
+    margin-left: 630px;
     font-size: 30px;
     position: relative;
-    top: 240px;
+    top: 180px;
     height: 120px;
     margin-top: -25px;
     max-height: 1px;
@@ -111,8 +111,8 @@
 
 .exemplos {
 
-    margin-left: 540px;
-    margin-top: -500px;
+    margin-left: 430px;
+    margin-top: -590px;
     width: 300px;
     font-family: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');;
 
@@ -146,7 +146,7 @@
 .exemplosdois {
 
 
-    margin-left: 860px;
+    margin-left: 780px;
     margin-top: -35px;
     width: 300px;
     font-family: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');;
@@ -191,7 +191,7 @@
 
 
 .exemplostres {
-    margin-left: 1200px;
+    margin-left: 1100px;
     margin-top: -444px;
     width: 320px;
     font-family: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');;
@@ -257,112 +257,3 @@
 }
 
 
-.foto-baixo-escreva {
-
-
-
-
-
-    margin-left: -840px;
-    height: 20px;
-    color: black;
-    position: relative;
-    top: 4px;
-}
-
-
-.foto-baixo-escreva-direita {
-
-
-
-    margin-left: 790px;
-    height: 20px;
-    color: black;
-    position: relative;
-    top: 4px;
-
-}
-
-
-.imagem-meio {
-
-    margin-left: 625px;
-    margin-top: -520px;
-}
-
-.imagem-meio-dois {
-
-    margin-left: 970px;
-    margin-top: -32px;
-}
-
-.imagem-meio-tres {
-    margin-left: 1310px;
-    margin-top: -36px;
-}
-
-.img-tela1 {
-
-
-    margin-left: 14px;
-    height: 18px;
-    position: relative;
-    top: -320px;
-}
-
-.img-tela2 {
-
-    margin-left: -22px;
-    height: 18px;
-    position: relative;
-    top: -293px;
-}
-
-.img-tela3 {
-    margin-left: -22px;
-    height: 18px;
-    position: relative;
-    top: -263px;
-}
-
-.img-tela-baixo1 {
-
-    margin-left: 15px;
-    margin-top: 365px;
-    height: 17px;
-}
-
-.img-tela-baixo2 {
-
-    position: relative;
-    top: 33px;
-    margin-left: -23px;
-    height: 20px;
-
-
-}
-
-.img-tela-baixo3 {
-
-
-    position: relative;
-    top: 67px;
-    margin-left: -23px;
-    height: 17px;
-}
-
-.img-tela-baixo4 {
-
-    position: relative;
-    top: 100px;
-    margin-left: -20px;
-    height: 17px;
-}
-
-.img-tela-baixo5 {
-
-    position: relative;
-    top: 136px;
-    margin-left: -20px;
-    height: 17px;
-}
