@@ -1,259 +1,216 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.left-panel {
 
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-.borda {
-
-
-    margin-left: 10px;
-    border-right: 2px solid whitesmoke;
-    width: 230px;
-    margin-top: -198px;
-}
-
-.chatbtn {
-
-
-    position: relative;
-    top: 220px;
-    width: 195px;
-    margin-left: 3px;
-    border-radius: 8px;
-    background-color: black;
-    color: white;
-    height: 28px;
-
+    height: 100vh;
+    width: 20vw;
+    border-right: 1px solid #ccc;
 
 }
 
-.painel-lateral {
+.central-panel {
 
+    height: 100vh;
+    width: 80vw;
 
-
-    margin-top: 239px;
-    height: 170px;
     display: flex;
-    font-size: 10px;
     flex-direction: column;
-    align-items: normal;
-    gap: 5px;
-    /*espacamento entre as colunas*/
-    display: flex;
     align-items: center;
-    text-align: left;
-    justify-content: center;
-    width: 10vw;
-    color: black;
-    margin-left: 20px;
-
-
+    justify-content: flex-start;
 
 }
 
+.central-panel .chat-logo {
 
+    margin-top: 25vh;
 
+}
 
+.central-panel .dicas-container {
 
-.painell-lateral-baixo {
-
-
-
-    margin-top: 700px;
-    padding: -10px;
     display: flex;
-    font-size: 10px;
+    max-width: 50vw;
+    margin-top: 20px;
+
+}
+
+.central-panel .dicas-item {
+
+    display: flex;
     flex-direction: column;
-    align-items: normal;
-    gap: 10px;
-    /*espacamento entre as colunas*/
-    width: 10vw;
-    display: flex;
     align-items: center;
-    text-align: center;
-    justify-content: center;
-    height: 10vh;
-    margin-left: 24px;
+    margin-right: 20px;
 
 }
 
-.botao-chat {
+.central-panel .dicas-item h2 {
 
-
-    width: 130px;
-    text-align: left;
-    background-color: white;
-    border: none;
-    position: relative;
-    top: -0px;
-    margin-bottom: 10px;
-
-}
-
-
-
-
-.meio {
-
-    margin-left: 630px;
-    font-size: 30px;
-    position: relative;
-    top: 180px;
-    height: 120px;
-    margin-top: -25px;
-    max-height: 1px;
-
-}
-
-
-.exemplos {
-
-    margin-left: 430px;
-    margin-top: -590px;
-    width: 300px;
-    font-family: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');;
-
-
-
-}
-
-.titulos-um {
-
-
-    position: relative;
-    top: -65px;
-    font-size: 20px;
-    margin-left: 62px;
-
-}
-
-.paragrafo1 {
-
-
-    margin-left: -40px;
-    margin-bottom: 27px;
-    font-size: 20px;
-    position: relative;
-    top: -22px;
-}
-
-
-
-
-.exemplosdois {
-
-
-    margin-left: 780px;
-    margin-top: -35px;
-    width: 300px;
-    font-family: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');;
-
-
-
-}
-
-
-
-
-
-.titulos-dois {
-
-
-    margin-left: 79px;
-    position: relative;
-    top: -271px;
-    font-size: 20px;
-}
-
-.paragrafo2 {
-
-
-    font-size: 20px;
-    margin-bottom: 30px;
-    margin-bottom: 15px;
-    ;
-    padding: 10px;
-    margin-top: -5px;
-    position: relative;
-    top: -233px
-}
-
-
-
-.exemplosdois p {
-
-    margin-bottom: 10px;
-}
-
-
-
-.exemplostres {
-    margin-left: 1100px;
-    margin-top: -444px;
-    width: 320px;
-    font-family: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');;
-
-
-
-}
-
-
-
-.titulos-tres {
-
-    position: relative;
-    top: -61px;
-    margin-left: 80px;
-    font-size: 20px;
-
-
-
-}
-
-.exemplostres p {
-
-
-    font-size: 20px;
     margin-bottom: 20px;
-    position: relative;
-    top: -19px;
-}
 
-
-
-
-
-.digitacao {
-
-
-    margin-left: 640px;
-    margin-top: 185px;
-    font-family: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');;
-
-
+    display: flex;
+    /* Usa o modelo Flexbox para organizar os elementos */
+    flex-direction: column;
+    /* Organiza os elementos em colunas */
+    align-items: center;
+    /* Cetraliza horizontalmente */
 
 }
 
+.central-panel .dicas-item p {
 
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #F7F9FB;
+    border-radius: 8px;
 
+}
 
+.container {
 
+    display: flex;
 
+}
 
+.top {
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 70vh;
 
-.escreva {
+}
 
+.top .btn-new-chat {
 
-    height: 40px;
-    width: 780px;
-    background-color: white;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 10px;
+
+}
+
+.btn-chat {
+
+    width: 100%;
+    background-color: transparent;
+    padding: 10px;
+    color: black;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+
+    display: flex;
+    /* Usa o modelo Flexbox para organizar os elementos */
+    flex-direction: row;
+    /* Organiza os elementos em linhas */
+    align-items: center;
+    /* Centraliza verticalmente */
+
+}
+
+.btn-chat img {
+
+    margin-right: 15px;
+
+}
+
+.bottom {
+
+    border-top: 1px solid #ccc;
+    padding: 20px;
+
+}
+
+.input-container-1 {
+
+    margin-top: auto;
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+
+    border: none;
+    background-color: #F7F9FB;
+
     border-radius: 16px;
-    margin-left: 59px;
-    border: #F7F9FB;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
+.input-container-1 input {
 
+    border: none;
+    padding: 20px;
+    background-color: transparent;
+    width: 40vw;
+
+}
+
+.input-container-2 {
+
+    margin-top: auto;
+    margin-bottom: 40px;
+
+}
+
+.input-container-2 input {
+
+    padding: 20px;
+    border: none;
+    background-color: #F7F9FB;
+    border-radius: 16px;
+    width: 40vw;
+
+}
+
+.chat-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    width: 80vw;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.chat-header {
+
+    margin-bottom: 20px;
+
+}
+
+.chat-messages {
+
+    width: 100%;
+
+}
+
+.chat-container .message-item {
+
+    background-color: #ccc;
+    border-radius: 12px 12px 0 12px;
+    padding: 20px;
+    width: 300px;
+    margin-left: auto;
+
+}
+
+.chat-container .message-item.chatbot {
+
+    background-color: #ccc;
+    border-radius: 12px 12px 12px 0px;
+    padding: 20px;
+    width: 300px;
+    margin-left: unset;
+    color: white;
+    background: #000;
+
+}

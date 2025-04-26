@@ -59,9 +59,9 @@ function Login() {
       <main className="paige-contener">
         <div className="roboimage"></div>
 
-        <div className="logincontener">
+        <div className="login-logincontener">
 
-          <img className="logo" src={logo} alt="logo do senai GPT" />
+          <img className="login-logo" src={logo} alt="logo do senai GPT" />
 
           <h1
             id="meutitulo"
@@ -71,7 +71,7 @@ function Login() {
           <input className="inpt" value={email} onChange={Event => setEmail(Event.target.value)} type="email" placeholder="Insira o e-mail" />
           <input className="inpt" value={password} onChange={Event => setPassword(Event.target.value)} type="password" placeholder="Insira a senha" />
 
-          <button className="btn" onClick={onloginclick}>Entra</button>
+          <button className="login-btn" onClick={onloginclick}>Entra</button>
 
         </div>
 
