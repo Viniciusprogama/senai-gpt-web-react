@@ -1,7 +1,9 @@
 import "./chat.css";
 import logo from "../../assets/imgs/Chat.png";
 import example from "../../assets/imgs/IconSet (2).png";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useState } from "react";
+
+
 
 function Chat() {
 
@@ -101,38 +103,103 @@ function Chat() {
 
     }
 
-    const EnviarMessage = async (message) => {
+    const enviarMensagem = async (message) => {
 
-        let resposta = await chatGPT(message);
+        // Mostrar chat na tela.
+        console.log("Mensagem", message);
 
-        console.log("resposta: ", resposta);
+        let userId = localStorage.getItem("meuId");
 
         let novaMensagemUsuario = {
 
-            userId: "chatGPT",
-            text: resposta,
-            id: 10
+            text: message,
+            id: crypto.randomUUID(),
+            userId: userId
 
         };
 
-        let novaRespostachatGPT = {
-
-            useId: "chatbot",
-            text: resposta,
-            id: 10
-
-
-        };
-
-        let NovoChatSelecionado = { ...chatSelecionado };
-        novoChatSelecionado.messages.push(novaMensagemUsuario)
-        novoChatSelecionado.messages.push(novaRespostachatGPT)
-
+        let novoChatSelecionado = { ...chatSelecionado };
+        novoChatSelecionado.messages.push(novaMensagemUsuario);
         setChatSelecionado(novoChatSelecionado);
 
+        let respostaGPT = await chatGPT(message);
+
+        let novaMensagemGPT = {
+
+            text: respostaGPT,
+            id: crypto.randomUUID(),
+            userId: "chatbot"
+
+        };
+
+        // Acrescenta a mensagem do GPT na tela
+        novoChatSelecionado = { ...chatSelecionado };
+        novoChatSelecionado.messages.push(novaMensagemGPT);
+        setChatSelecionado(novoChatSelecionado);
+
+        console.log("resposta", respostaGPT);
+
+        // Salva as mensagens no banco.
+        let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats/" + chatSelecionado.id, {
+            method: "PUT",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("meuToken"),
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(
+                novoChatSelecionado
+            )
+        });
+
+        if (response.ok == false) {
+
+            console.log("Salvar o chat deu errado.");
+
+        }
 
     }
 
+
+    const novoChat = async () => {
+
+        let novoTitulo = prompt("insira o titulo do chat")
+    
+        if (novoTitulo == null || novoTitulo == "") {
+    
+          alert("Insira um titulo")
+          return
+    
+        }
+    
+          let userId = localStorage.getItem("meuId")
+    
+          let nChat = {
+        
+            chatTittle: novoTitulo,
+            id: crypto.randomUUID(),
+            userId: userId,
+            messages: []
+        
+          }
+        
+          let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats", {
+            method: "POST",
+            headers: {
+              "Authorization": "bearer " + localStorage.getItem("meuToken"),
+              "content-Type": "application/json"
+            },
+            body: JSON.stringify(
+              nChat
+            )
+          });
+        
+          if (response.ok) {
+        
+            await getChats();
+        
+          }
+    
+        }
     return (
         <>
             <div className="container">
@@ -141,8 +208,8 @@ function Chat() {
 
                     <div className="top">
 
-                        <button className="btn-new-chat">+ New chat</button>
-
+                        <button className="btn-new-chat" onClick={() => novoChat()}>+ New chat</button>
+                        
                         {chats.map(chat => (
                             <button className="btn-chat" onClick={() => clickChat(chat)}>
                                 <img src="../assets/imgs/chat.svg" alt="ícone de chat." />
@@ -263,7 +330,7 @@ function Chat() {
                             type="text" />
 
 
-                        <img onClick={() => EnviarMessage(userMessage)} src="../../assets/imgs/IconSet (2).png" alt="Send." />
+                        <img onClick={() => enviarMensagem(userMessage)} src="../../assets/imgs/IconSet (2).png" alt="Send." />
 
                     </div>
 

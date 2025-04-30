@@ -1,6 +1,7 @@
 import "./login.css"
 import logo from "../../assets/imgs/Chat.png"
 import { useState } from "react";
+import { UNSAFE_getSingleFetchDataStrategy } from "react-router-dom";
 
 function Login() {
 
@@ -30,10 +31,12 @@ function Login() {
       let json = await response.json();
 
       let token = json.accessToken;
+      let userId = json.user.id;
 
       console.log("Token;" + token);
 
       localStorage.setItem("meuToken", token);
+      localStorage.setItem("meuId", userId);
 
       window.location.href = "/chat";
 
@@ -52,6 +55,11 @@ function Login() {
 
   }
 
+  
+
+  
+
+ 
 
 
   return (
