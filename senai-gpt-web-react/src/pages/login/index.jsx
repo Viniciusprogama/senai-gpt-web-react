@@ -10,7 +10,7 @@ function Login() {
 
   const onloginclick = async () => {
 
-    let response = await fetch("https://senai-gpt-api.azurewebsites.net/login", {
+    let response = await fetch("https://senai-gpt-api.up.railway.app/login", {
       headers: {
         "content-Type": "application/json"
       },
@@ -80,6 +80,10 @@ function Login() {
           <input className="inpt" value={password} onChange={Event => setPassword(Event.target.value)} type="password" placeholder="Insira a senha" />
 
           <button className="login-btn" onClick={onloginclick}>Entra</button>
+
+          <a className="form-hint" href="/login"> clique aqui para fazer o login</a>
+
+          
 
         </div>
 

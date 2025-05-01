@@ -23,7 +23,7 @@ function Chat() {
 
     const getChats = async () => {
         // Arrow Function
-        let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats", {
+        let response = await fetch("https://senai-gpt-api.up.railway.app/chats", {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("meuToken")
             }
@@ -66,6 +66,8 @@ function Chat() {
     }
 
     const chatGPT = async (message) => {
+
+        
 
         // Configurações do endpoint e chave da API
         const endpoint = "https://ai-testenpl826117277026.openai.azure.com/";
@@ -140,7 +142,7 @@ function Chat() {
         console.log("resposta", respostaGPT);
 
         // Salva as mensagens no banco.
-        let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats/" + chatSelecionado.id, {
+        let response = await fetch("https://senai-gpt-api.up.railway.app/chats/" + chatSelecionado.id, {
             method: "PUT",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("meuToken"),
@@ -175,17 +177,17 @@ function Chat() {
     
           let nChat = {
         
-            chatTittle: novoTitulo,
+            chatTitle: novoTitulo,
             id: crypto.randomUUID(),
             userId: userId,
             messages: []
         
           }
         
-          let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats", {
+          let response = await fetch("https://senai-gpt-api.up.railway.app/chats", {
             method: "POST",
             headers: {
-              "Authorization": "bearer " + localStorage.getItem("meuToken"),
+              "Authorization": "Bearer " + localStorage.getItem("meuToken"),
               "content-Type": "application/json"
             },
             body: JSON.stringify(
@@ -370,7 +372,7 @@ export default Chat;
 
 //     const getChats = async () => {
 
-//         let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats", {
+//         let response = await fetch("https://senai-gpt-api.up.railway.app/chats", {
 
 //             headers: {
 //                 "Authorization": "Bearer " + localStorage.getItem("meuToken")
