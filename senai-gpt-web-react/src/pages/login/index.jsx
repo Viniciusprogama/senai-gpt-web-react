@@ -81,7 +81,7 @@ function Login() {
 
           <button className="login-btn" onClick={onloginclick}>Entra</button>
 
-          <a className="form-hint" href="/login"> clique aqui para fazer o login</a>
+          <a className="form-hint" href="/nuserclick"> clique aqui para fazer o login</a>
 
           
 

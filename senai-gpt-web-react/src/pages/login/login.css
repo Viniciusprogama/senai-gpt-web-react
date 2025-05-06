@@ -88,3 +88,47 @@ h1 {
     width: 50vw;
     height: 100vh;
 }
+
+@media screen and (max-width: 1366px) {
+
+    /* Desktop Pequeno*/
+
+    .roboimage{
+        display: none;
+    }
+
+    .login-logincontener{
+        width: 100vw !important;
+        background-image: url(../../assets/imgs/Sidebar.png);
+        background-size: cover;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    /* Tablet */
+    .roboimage{
+        display: none;
+    }
+    .login-logincontener{
+        width: 100vw;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Celular */
+
+    .roboimage{
+        display: none;
+    }
+
+    .login-logincontener{
+        width: 100vw;
+        background-image: url(../../assets/imgs/Sidebar.png);
+        background-size: cover;
+    }
+
+}

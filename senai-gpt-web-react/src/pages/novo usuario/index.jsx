@@ -1,5 +1,5 @@
 import "./novo-usuario.css"
-import logo from "../../assets/imgs/image.webp"
+import logo from "../../assets/imgs/Chat.png"
 import { useState } from "react"
 
 
@@ -9,7 +9,7 @@ function Newuser() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [text, setText] = useState("");
-    const [confirmationPassword, setPassword] = useState("")
+    const [confirmationPassword, setconfirmPassword] = useState("")
 
     const Nuserclick = async () => {
 
@@ -76,8 +76,12 @@ function Newuser() {
                     <input className="inpt" value={text} onChange={Event => setText(Event.target.value)} type="text" placeholder="Insira o seu nome" />
                     <input className="inpt" value={email} onChange={Event => setEmail(Event.target.value)} type="email" placeholder="Insira o e-mail" />
                     <input className="inpt" value={password} onChange={Event => setPassword(Event.target.value)} type="password" placeholder="Insira a senha" />
-                    <input className="inpt" value={confirmationPassword} onChange={Event => setPassword(Event.target.value)} type="password" placeholder="insira a senha" />
+                    <input className="inpt" value={confirmationPassword} onChange={Event => setconfirmPassword(Event.target.value)} type="password" placeholder="insira a senha" />
                     <button className="login-btn" onClick={Nuserclick}>criar usuario</button>
+
+
+                    <a className="form-hin" href="/login"> </a>
+
 
                 </div>
 

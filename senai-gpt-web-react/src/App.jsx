@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes, UNSAFE_DataRouterStateContext } from "react-router-dom"
 import Login from "./pages/login"
 import Chat from "./pages/chat"
+import Newuser from "./pages/novo usuario";
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/chat" element={isAuthenticated() == true? <Chat/> : <h1>sai daqui vc n tem autorizacao</h1>}></Route>
       <Route path="/*" element={<h1>Not found</h1>}></Route>
-      <Route path="/nuserclick" element={<Login/>}></Route>
+      <Route path="/nuserclick" element={<Newuser/>}></Route>
       
 
     </Routes>

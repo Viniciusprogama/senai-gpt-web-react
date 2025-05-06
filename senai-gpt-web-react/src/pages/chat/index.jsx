@@ -9,9 +9,9 @@ function Chat() {
 
     const [chats, setChats] = useState([]);
     const [chatSelecionado, setChatSelecionado] = useState(null);
-
-
     const [userMessage, setUserMessage] = useState("")
+
+    const [isLeftPanelOpen, setIsLeftPanelOpen] = useState(false);
 
     useEffect(() => {
 
@@ -67,7 +67,7 @@ function Chat() {
 
     const chatGPT = async (message) => {
 
-        
+
 
         // Configurações do endpoint e chave da API
         const endpoint = "https://ai-testenpl826117277026.openai.azure.com/";
@@ -146,7 +146,7 @@ function Chat() {
             method: "PUT",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("meuToken"),
-                "Content-Type" : "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(
                 novoChatSelecionado
@@ -165,53 +165,59 @@ function Chat() {
     const novoChat = async () => {
 
         let novoTitulo = prompt("insira o titulo do chat")
-    
+
         if (novoTitulo == null || novoTitulo == "") {
-    
-          alert("Insira um titulo")
-          return
-    
+
+            alert("Insira um titulo")
+            return
+
         }
-    
-          let userId = localStorage.getItem("meuId")
-    
-          let nChat = {
-        
+
+        let userId = localStorage.getItem("meuId")
+
+        let nChat = {
+
             chatTitle: novoTitulo,
             id: crypto.randomUUID(),
             userId: userId,
             messages: []
-        
-          }
-        
-          let response = await fetch("https://senai-gpt-api.up.railway.app/chats", {
+
+        }
+
+        let response = await fetch("https://senai-gpt-api.up.railway.app/chats", {
             method: "POST",
             headers: {
-              "Authorization": "Bearer " + localStorage.getItem("meuToken"),
-              "content-Type": "application/json"
+                "Authorization": "Bearer " + localStorage.getItem("meuToken"),
+                "content-Type": "application/json"
             },
             body: JSON.stringify(
-              nChat
+                nChat
             )
-          });
-        
-          if (response.ok) {
-        
+        });
+
+        if (response.ok) {
+
             await getChats();
-        
-          }
-    
+
         }
+
+    }
     return (
         <>
             <div className="container">
+                {/* Toggle Button*/}
+                <button className="btn-toggle-panel"
+                    onClick={() => setIsLeftPanelOpen(true)}
+                >
+                    ☰
+                </button>
 
-                <header className="left-panel">
+                <header className={`left-panel ${isLeftPanelOpen == true ? "open" : ""}`}>
 
                     <div className="top">
 
                         <button className="btn-new-chat" onClick={() => novoChat()}>+ New chat</button>
-                        
+
                         {chats.map(chat => (
                             <button className="btn-chat" onClick={() => clickChat(chat)}>
                                 <img src="../assets/imgs/chat.svg" alt="ícone de chat." />
