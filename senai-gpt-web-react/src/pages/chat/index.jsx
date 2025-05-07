@@ -1,6 +1,10 @@
 import "./chat.css";
 import logo from "../../assets/imgs/Chat.png";
-import example from "../../assets/imgs/IconSet (2).png";
+import example from "../../assets/imgs/IconSet.png"
+import icon from "../../assets/imgs/Group.png"
+import paper from "../../assets/imgs/PaperPlaneRight.png"
+import icon1 from "../../assets/imgs/IconSet (1).png"
+import icon2 from "../../assets/imgs/IconSet (2).png"
 import { useEffect, useState } from "react";
 
 
@@ -62,7 +66,7 @@ function Chat() {
 
         setChatSelecionado(chat);
         console.log(chat);
-
+        setIsLeftPanelOpen(false);
     }
 
     const chatGPT = async (message) => {
@@ -207,7 +211,7 @@ function Chat() {
             <div className="container">
                 {/* Toggle Button*/}
                 <button className="btn-toggle-panel"
-                    onClick={() => setIsLeftPanelOpen(true)}
+                    onClick={() => setIsLeftPanelOpen(!isLeftPanelOpen)}
                 >
                     ☰
                 </button>
@@ -258,35 +262,35 @@ function Chat() {
                                         Examples
                                     </h2>
 
-                                    <p>Explique como um computador quântico funciona.</p>
-                                    <p>Explique como um computador quântico funciona.</p>
-                                    <p>Explique como um computador quântico funciona.</p>
+                                    <p>Explain quantum computing insimple terms.</p>
+                                    <p>Got any creative ideas for a 10 year old's birthday.</p>
+                                    <p>How do I make an HTTP requestin Javascript.</p>
 
                                 </div>
 
                                 <div className="dicas-item">
 
                                     <h2>
-                                        <img src={example} alt="Example icon." />
-                                        Examples
+                                        <img src={icon1} alt="Example icon." />
+                                        Capabilities
                                     </h2>
 
-                                    <p>Explique como um computador quântico funciona.</p>
-                                    <p>Explique como um computador quântico funciona.</p>
-                                    <p>Explique como um computador quântico funciona.</p>
+                                    <p>Remembers what user saidearlier in the conversation.</p>
+                                    <p>Allows user to provide follow-up corrections.</p>
+                                    <p>Trained to decline inappropriate requests.</p>
 
                                 </div>
 
                                 <div className="dicas-item">
 
                                     <h2>
-                                        <img src={example} alt="Example icon." />
-                                        Examples
+                                        <img src={icon2} alt="Example icon." />
+                                        Limitations
                                     </h2>
 
-                                    <p>Explique como um computador quântico funciona.</p>
-                                    <p>Explique como um computador quântico funciona.</p>
-                                    <p>Explique como um computador quântico funciona.</p>
+                                    <p>May occasionally generate incorrect information.</p>
+                                    <p>May occasionally produce harmful instructions or biased content.</p>
+                                    <p>Limited knowledge of world andevents after 2021.</p>
 
                                 </div>
 
@@ -328,8 +332,8 @@ function Chat() {
 
                     <div className="input-container-1">
 
-                        <img src="../assets/imgs/mic.svg" alt="Microphone." />
-                        <img src="../assets/imgs/img.svg" alt="Image." />
+                        <img src={icon} alt="Microphone." />
+
 
                         <input
                             value={userMessage}
@@ -338,7 +342,7 @@ function Chat() {
                             type="text" />
 
 
-                        <img onClick={() => enviarMensagem(userMessage)} src="../../assets/imgs/IconSet (2).png" alt="Send." />
+                        <img onClick={() => enviarMensagem(userMessage)} src={paper} alt="Send." />
 
                     </div>
 

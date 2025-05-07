@@ -95,7 +95,7 @@
 
     width: 100%;
     background-color: transparent;
-    padding: 10px;
+    padding: 3px;
     color: black;
     border: none;
     border-radius: 12px;
@@ -111,11 +111,8 @@
 
 }
 
-.btn-chat img {
 
-    margin-right: 15px;
 
-}
 
 .bottom {
 
@@ -215,17 +212,23 @@
 
 }
 
+.btn-toggle-panel {
+
+    display: none;
+
+}
+
 @media screen and (max-width: 768px) {
 
     /* Celular */
 
-    .left-panel{
+    .left-panel {
 
         display: none;
 
     }
 
-    .left-panel.open{
+    .left-panel.open {
 
         display: block;
 
@@ -237,13 +240,16 @@
 
     }
 
-    .central-panel{
+    .central-panel {
 
         width: 100vw;
 
     }
-    .btn-toggle-panel{
-        
+
+    .btn-toggle-panel {
+
+        display: block;
+
         z-index: 2;
 
         width: 50px;
@@ -263,6 +269,17 @@
         background-color: white;
 
     }
-    
-    
+
+    .chat-logo img {
+
+        width: 75vw;
+
+    }
+
+    .central-panel .dicas-container {
+
+        max-width: 80vw;
+
+    }
+
 }
